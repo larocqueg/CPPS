@@ -14,21 +14,17 @@
 
 int	main(int ac, char **av)
 {
-	int	i;
-	int	j;
-
 	if (ac > 1)
 	{
-		i = 1;
-		while (av[i])
+		av++;
+		while (*av)
 		{
-			j = 0;
-			while (av[i][j])
+			while (**av)
 			{
-				std::cout << (char)toupper(av[i][j]);
-				j++;
+				std::cout << (char)toupper(**av);
+				(*av)++;
 			}
-			i++;
+			av++;
 		}
 		std::cout << std::endl;
 		return (0);
