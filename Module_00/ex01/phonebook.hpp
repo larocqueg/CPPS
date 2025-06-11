@@ -16,7 +16,8 @@
 class Phonebook
 {
 	private:
-
+		int	oldest_id;
+		int	counter;
 	public:
 };
 
