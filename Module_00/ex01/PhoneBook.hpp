@@ -17,23 +17,23 @@
 # include <string>
 
 #ifndef MAX_CONTACTS
-#define MAX_CONTACTS 8
+# define MAX_CONTACTS 8
 #endif
 
 class PhoneBook
 {
   private:
-    int oldest_id;
-    int counter;
+    int     oldest_id;
+    int     counter;
 
   public:
-    int     get_size()const;
-    bool    is_full()const;
-    void    new_contact(Contact contact);
-    void    display()const;
-    Contact get_contact(int index)const;
+    void    addcontact(Contact contact);
+    bool    display_all(void)const;
+    bool    display_contact(int index)const;
+    int     get_size(void)const;
+    Contact newcontact(int index)const;
     PhoneBook ();
     ~PhoneBook();
-},
+};
 
 #endif
