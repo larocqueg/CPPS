@@ -11,6 +11,26 @@
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
-# define CONTACT_HPP
+#define CONTACT_HPP
+
+#include <string>
+#include <iostream>
+#include <cctype>
+
+using std::string;
+
+class Contact
+{
+  private:
+    string  name;
+    string  last_name;
+    string  nickname;
+    string  phone_number;
+    string  secret;
+  public:
+    Contact();
+    ~Contact();
+
+}
 
 #endif
