@@ -16,21 +16,21 @@
 #include <string>
 #include <iostream>
 #include <cctype>
-
-using std::string;
+#include <unistd.h>
 
 class Contact
 {
   private:
-    string  name;
-    string  last_name;
-    string  nickname;
-    string  phone_number;
-    string  secret;
+    std::string name;
+    std::string lastname;
+    std::string nickname;
+    std::string number;
+    std::string secret;
+
   public:
     Contact();
     ~Contact();
-
-}
+    
+};
 
 #endif
