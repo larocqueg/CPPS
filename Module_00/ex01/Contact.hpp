@@ -30,7 +30,11 @@ class Contact
   public:
     Contact();
     ~Contact();
-    
+    std::string get_first_name()const;
+    std::string get_last_name()const;
+    std::string get_nickname()const;
+    std::string get_number()const;
+    std::stirng get_secret()const;
 };
 
 #endif
