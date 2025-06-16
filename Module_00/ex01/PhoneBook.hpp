@@ -13,27 +13,23 @@
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-# include "Contact.cpp"
-# include <string>
-
-#ifndef MAX_CONTACTS
-# define MAX_CONTACTS 8
-#endif
+# include "Contact.hpp"
 
 class PhoneBook
 {
   private:
+    Contact contacts[8];
     int     oldest_id;
     int     counter;
 
   public:
-    void    addcontact(Contact contact);
+    PhoneBook ();
+    ~PhoneBook();
+    void    add_contactcontact(Contact contact);
     bool    display_all(void)const;
     bool    display_contact(int index)const;
     int     get_size(void)const;
-    Contact newcontact(int index)const;
-    PhoneBook ();
-    ~PhoneBook();
+    Contact get_contact(int index)const;
 };
 
 #endif
