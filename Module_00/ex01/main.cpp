@@ -20,7 +20,7 @@ int	main(int ac, char **av)
 	(void)av;
 	if (ac > 1)
 	{
-    count << "Error: Execute only with ./phonebook";
+    std::cout << "Error: Execute only with ./phonebook";
     return (1);
 	}
   std::cout << "Welcome to phonebook! Use one of the following commands;" << std::endl;
@@ -28,7 +28,7 @@ int	main(int ac, char **av)
   return (0);
 }
 
-void  new_contact()
+Contact new_contact()
 {
   std::string input;
   Contact     contact;
@@ -39,35 +39,31 @@ void  new_contact()
     std::getline(std::cin, input);
     std::cout << std::endl;
   }
-  input.clear();
-  while (!set_last_name(input))
+  while (!contact.set_last_name(input))
   {
     std::cout << "Enter contact last name: ";
     std::getline(std::cin, input);
     std::cout << std::endl;
   }
-  input.clear();
-  while (!set_nickname(input))
+  while (!contact.set_nickname(input))
   {
     std::cout << "Enter contact nickname: ";
     std::getline(std::cin, input);
     std::cout << std::endl;
   }
-  input.clear();
-  while (!set_number(input))
+  while (!contact.set_number(input))
   {
     std::cout << "Enter contact number: ";
     std::getline(std::cin, input);
     std::cout << std::endl;
   }
-  input.clear();
-  while (!set_secret(input))
+  while (!contact.set_secret(input))
   {
     std::cout << "Enter contact darkest secret: ";
     std::getline(std::cin, input);
     std::cout << std::endl;
   }
-  input.clear();
+  return (contact);
 }
 
 void  program_loop()
@@ -78,23 +74,29 @@ void  program_loop()
   while (1)
   {
     std::cout << "ADD: adds a contact to the phonebook." << std::endl;
-    std::cout << "SEARCH: Display a specific contact." << std:endl;
-    std::cout << "Exit: If you want to exit the program." << std:endl;
-    get_input(std::cin, input);
+    std::cout << "SEARCH: Display a specific contact." << std::endl;
+    std::cout << "EXIT: If you want to exit the program." << std::endl;
+    if (!std::getline(std::cin, input))
+    {
+      std::cout << "\nInput error or EOF detected. Exiting." << std::endl;
+      break ;
+    }
     if (input == "ADD")
     {
       std::cout << "Creating new contact" << std::endl;
       phonebook.add_contact(new_contact());
-      std::cout << "Contact created!" << str::endl;
+      std::cout << "Contact created!" << std::endl;
     }
-    if (input == "SEARCH")
+    else if (input == "SEARCH")
     {
 
     }
-    if (input == "Exit")
+    else if (input == "EXIT")
     {
-      std::cout << "Exiting phonebook, have a good one!" << std:endl;
+      std::cout << "Exiting phonebook, have a good one!" << std::endl;
       break ;
     }
+    else
+      std::cout << "Unknow command. Please type ADD, SEARCH or EXIT." << std::endl;
   }
 }
