@@ -34,7 +34,11 @@ class Contact
     std::string get_last_name()const;
     std::string get_nickname()const;
     std::string get_number()const;
-    std::stirng get_secret()const;
+    std::string get_secret()const;
+    bool        set_first_name(std::string first_name);
+    bool        set_last_name(std::string last_name);
+    bool        set_number(std::string number);
+    bool        set_secret(std::string secret);
 };
 
 #endif
