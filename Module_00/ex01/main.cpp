@@ -115,7 +115,8 @@ void  program_loop()
   {
     std::cout << "ADD: adds a contact to the phonebook." << std::endl;
     std::cout << "SEARCH: Display all contacts and asks the user to select one" << std::endl;
-    std::cout << "EXIT: If you want to exit the program." << std::endl;
+    std::cout << "EXIT: If you want to exit the program.\n" << std::endl;
+    std::cout << "$> ";
     if (!std::getline(std::cin, input))
     {
       std::cout << "Exiting program!" << std::endl;
@@ -123,7 +124,7 @@ void  program_loop()
     }
     if (input == "ADD")
     {
-      std::cout << "Creating new contact\n" << std::endl;
+      std::cout << "\nCreating new contact\n" << std::endl;
       phonebook.add_contact(new_contact());
       std::cout << "Contact created!\n" << std::endl;
     }
@@ -134,10 +135,10 @@ void  program_loop()
     }
     else if (input == "EXIT")
     {
-      std::cout << "Exiting phonebook, have a good one!" << std::endl;
+      std::cout << "\nExiting phonebook, have a good one!" << std::endl;
       break ;
     }
     else
-      std::cout << "Unknow command. Please type ADD, SEARCH or EXIT." << std::endl;
+      std::cout << "\nUnknow command. Please type ADD, SEARCH or EXIT.\n" << std::endl;
   }
 }
