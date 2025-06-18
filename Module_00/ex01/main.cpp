@@ -6,7 +6,7 @@
 /*   By: gde-la-r <gde-la-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:41:13 by gde-la-r          #+#    #+#             */
-/*   Updated: 2025/06/16 14:56:37 by gde-la-r         ###   ########.fr       */
+/*   Updated: 2025/06/18 18:36:47 by gde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "PhoneBook.hpp"
 
 void  program_loop();
+void  sig_hand(int signum);
 
 int	main(int ac, char **av)
 {
@@ -24,10 +25,16 @@ int	main(int ac, char **av)
     return (1);
 	}
   std::cout << "Welcome to phonebook! Use one of the following commands;\n" << std::endl;
-  std::signal(SIGINT, SIG_IGN);
+  std::signal(SIGINT, sig_hand);
   std::signal(SIGQUIT, SIG_IGN);
   program_loop();
   return (0);
+}
+
+void  sig_hand(int signum)
+{
+  (void)signum;
+  std::cout << std::endl;
 }
 
 Contact new_contact()
