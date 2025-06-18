@@ -107,7 +107,8 @@ bool  PhoneBook::display_all(void) const
   } 
   print_table("==========", "==========", "==========", "==========");
   std::cout << "Select a contact index: ";
-  std::getline(std::cin, id);
+  if (!std::getline(std::cin, id))
+    exit(1);
   std::cout << std::endl;
   if (!display_contact(id[0] - '0'))
     std::cout << "Invalid index!" << std::endl;

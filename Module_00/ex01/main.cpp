@@ -24,6 +24,8 @@ int	main(int ac, char **av)
     return (1);
 	}
   std::cout << "Welcome to phonebook! Use one of the following commands;\n" << std::endl;
+  std::signal(SIGINT, SIG_IGN);
+  std::signal(SIGQUIT, SIG_IGN);
   program_loop();
   return (0);
 }
@@ -36,7 +38,8 @@ Contact new_contact()
   while (true)
   {
     std::cout << "Enter contact first name: ";
-    std::getline(std::cin, input);
+    if (!std::getline(std::cin, input))
+      exit (1);
     std::cout << std::endl;
     if (contact.set_first_name(input))
       break;
@@ -44,7 +47,8 @@ Contact new_contact()
   while (true)
   {
     std::cout << "Enter contact last name: ";
-    std::getline(std::cin, input);
+    if (!std::getline(std::cin, input))
+      exit(1);
     std::cout << std::endl;
     if (contact.set_last_name(input))
       break;
@@ -52,7 +56,8 @@ Contact new_contact()
   while (true)
   {
     std::cout << "Enter contact nickname: ";
-    std::getline(std::cin, input);
+    if (!std::getline(std::cin, input))
+      exit(1);
     std::cout << std::endl;
     if (contact.set_nickname(input))
       break;
@@ -60,7 +65,8 @@ Contact new_contact()
   while (true)
   {
     std::cout << "Enter contact number: ";
-    std::getline(std::cin, input);
+    if (!std::getline(std::cin, input))
+      exit(1);
     std::cout << std::endl;
     if (contact.set_number(input))
       break;
@@ -68,7 +74,8 @@ Contact new_contact()
   while (true)
   {
     std::cout << "Enter contact darkest secret: ";
-    std::getline(std::cin, input);
+    if (!std::getline(std::cin, input))
+      exit(1);
     std::cout << std::endl;
     if (contact.set_secret(input))
       break;
@@ -88,10 +95,7 @@ void  program_loop()
     std::cout << "SEARCH: Display a specific contact." << std::endl;
     std::cout << "EXIT: If you want to exit the program." << std::endl;
     if (!std::getline(std::cin, input))
-    {
-      std::cout << "\nInput error or EOF detected. Exiting." << std::endl;
-      break ;
-    }
+      exit(1);
     if (input == "ADD")
     {
       std::cout << "Creating new contact\n" << std::endl;

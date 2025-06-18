@@ -16,6 +16,8 @@
 #include <string>
 #include <iostream>
 #include <cctype>
+#include <cstdlib>
+#include <csignal>
 #include <unistd.h>
 
 class Contact
