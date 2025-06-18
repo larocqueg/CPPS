@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 
 void  program_loop();
 
@@ -68,8 +68,8 @@ Contact new_contact()
 
 void  program_loop()
 {
-  Phonebook   phonebook;
-  std::string  input;
+  PhoneBook     phonebook;
+  std::string   input;
 
   while (1)
   {

@@ -22,29 +22,29 @@ Contact::~Contact()
 
 }
 
-std::strig Contact::get_first_name() const
+std::string Contact::get_first_name() const
 {
-  return (this->firstname());
+  return (this->first_name);
 }
 
 std::string Contact::get_last_name() const
 {
-  return (this->lastname());
+  return (this->last_name);
 }
 
 std::string Contact::get_nickname() const
 {
-  return (this->nickname());
+  return (this->nick_name);
 }
 
 std::string Contact::get_number() const
 {
-  return (this->number());
+  return (this->phone_number);
 }
 
 std::string Contact::get_secret() const
 {
-  return (this->secret());
+  return (this->darkest_secret);
 }
 
 bool  Contact::set_first_name(std::string firstname)
@@ -55,10 +55,10 @@ bool  Contact::set_first_name(std::string firstname)
     return (false);
   if (firstname.length() > 20)
   {
-    std::cout << "First name must have a maximum of 20 characters!" << std::endl;i
+    std::cout << "First name must have a maximum of 20 characters!" << std::endl;
     return (false);
   }
-  while (i < firstname.length)
+  while (i < firstname.length())
   {
     if (!std::isspace(firstname[i]) && !std::isalpha(firstname[i]))
     {
@@ -84,7 +84,7 @@ bool  Contact::set_last_name(std::string lastname)
   }
   while (i < lastname.length())
   {
-    if (!std::isspace(lastname[i]) || !std::isalpha(lastname[i]))
+    if (!std::isspace(lastname[i]) && !std::isalpha(lastname[i]))
     {
       std::cout << "Last name must only contain letters!" << std::endl;
       return (false);
@@ -108,7 +108,7 @@ bool  Contact::set_nickname(std::string nickname)
   }
   while (i < nickname.length())
   {
-    if (!std::isspace(nickname[i]) || !std::isalpha(nickname[i]))
+    if (!std::isspace(nickname[i]) && !std::isalpha(nickname[i]))
     {
       std::cout << "Last name must only contain letters!" << std::endl;
       return (false);

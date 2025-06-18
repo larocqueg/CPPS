@@ -30,11 +30,11 @@ class Contact
   public:
     Contact();
     ~Contact();
-    std::string get_first_name()const;
-    std::string get_last_name()const;
-    std::string get_nickname()const;
-    std::string get_number()const;
-    std::string get_secret()const;
+    std::string get_first_name() const;
+    std::string get_last_name() const;
+    std::string get_nickname() const;
+    std::string get_number() const;
+    std::string get_secret() const;
     bool        set_first_name(std::string firstname);
     bool        set_last_name(std::string lastname);
     bool        set_nickname(std::string nickname);

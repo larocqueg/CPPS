@@ -25,11 +25,11 @@ class PhoneBook
   public:
     PhoneBook ();
     ~PhoneBook();
-    void    add_contactcontact(Contact contact);
-    bool    display_all(void)const;
-    bool    display_contact(int index)const;
-    int     get_size(void)const;
-    Contact get_contact(int index)const;
+    void    add_contact(Contact contact);
+    bool    display_all(void) const;
+    bool    display_contact(int index) const;
+    int     get_size(void) const;
+    Contact get_contact(int index) const;
 };
 
 #endif
