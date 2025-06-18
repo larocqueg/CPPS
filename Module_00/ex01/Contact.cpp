@@ -60,7 +60,7 @@ bool  Contact::set_first_name(std::string firstname)
   }
   while (i < firstname.length())
   {
-    if (!std::isspace(firstname[i]) && !std::isalpha(firstname[i]))
+    if (!std::isspace((unsigned char)firstname[i]) && !std::isalpha((unsigned char)firstname[i]))
     {
       std::cout << "First name must only contain letters!" << std::endl;
       return (false);
@@ -84,7 +84,7 @@ bool  Contact::set_last_name(std::string lastname)
   }
   while (i < lastname.length())
   {
-    if (!std::isspace(lastname[i]) && !std::isalpha(lastname[i]))
+    if (!std::isspace((unsigned char)lastname[i]) && !std::isalpha((unsigned char)lastname[i]))
     {
       std::cout << "Last name must only contain letters!" << std::endl;
       return (false);
@@ -108,7 +108,7 @@ bool  Contact::set_nickname(std::string nickname)
   }
   while (i < nickname.length())
   {
-    if (!std::isspace(nickname[i]) && !std::isalpha(nickname[i]))
+    if (!std::isspace((unsigned char)nickname[i]) && !std::isalpha((unsigned char)nickname[i]))
     {
       std::cout << "Last name must only contain letters!" << std::endl;
       return (false);
@@ -132,7 +132,7 @@ bool  Contact::set_number(std::string number)
   }
   while (i < number.length())
   {
-    if (!std::isdigit(number[i]))
+    if (!std::isdigit((unsigned char)number[i]))
     {
       std::cout << "Phone number must only be composed of digits!" << std::endl;
       return (false);

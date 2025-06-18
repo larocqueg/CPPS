@@ -96,19 +96,20 @@ bool  PhoneBook::display_all(void) const
     std::cout << "No contact to display, please add at least one contact!" << std::endl;
     return (false);
   }
-  print_table("|----------|", "|----------|", "|----------|", "|----------|");
+  print_table("==========", "==========", "==========", "==========");
   print_table("Index", "Name", "Last name", "Nickname");
   while (i < counter)
   {
+    print_table("==========", "==========", "==========", "==========");
     id = (char)i + '0';
     print_table(id, contacts[i].get_first_name(), contacts[i].get_last_name(), contacts[i].get_nickname());
     i++;
   } 
-  print_table("|----------|", "|----------|", "|----------|", "|----------|");
+  print_table("==========", "==========", "==========", "==========");
   std::cout << "Select a contact index: ";
   std::getline(std::cin, id);
   std::cout << std::endl;
-  if (!display_contact(id[0] - '0' - 1))
+  if (!display_contact(id[0] - '0'))
     std::cout << "Invalid index!" << std::endl;
   std::cout << std::endl;
   return (true);
