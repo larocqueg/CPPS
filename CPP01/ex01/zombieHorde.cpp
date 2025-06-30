@@ -11,3 +11,20 @@
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+Zombie  *zombieHorde(int N, std::string name)
+{
+  int i = 0;
+
+  if (N <= 0)
+  {
+    std::cerr << "Error: Invalid number of zombies!" << std::endl;
+    return (NULL);
+  }
+  Zombie *horde = new Zombie[N];
+  while (i < N)
+  {
+    horde[i++].setName(name);
+  }
+  return (horde);
+}
