@@ -13,7 +13,7 @@
 #ifndef ZOMBIE_HPP
 # define ZOMBIE_HPP
 
-#include <iostrem>
+#include <iostream>
 #include <string>
 
 class Zombie

@@ -11,3 +11,12 @@
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+int main(void)
+{
+  Zombie  *zombie = newZombie("Gabriel");
+  zombie->announce();
+  delete zombie;
+  randomChump("Foo");
+  return (0);
+}
