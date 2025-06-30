@@ -11,7 +11,18 @@
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-
+/*
+  std::cout << std::endl;
+  N = 0;
+  i = 0;
+  horde = zombieHorde(N, "infected");
+  if (!horde)
+    return (1);
+  while (i < N)
+  {
+    horde[i++].announce();
+  }
+*/
 int main(void)
 {
   int N = 5;
