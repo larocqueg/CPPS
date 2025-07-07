@@ -12,9 +12,13 @@
 
 #include "Zombie.hpp"
 
-int main(void)
+int main(int ac, char **av)
 {
-  Zombie  *zombie = newZombie("Gabriel");
+  Zombie  *zombie;
+  if (ac > 1)
+    zombie = newZombie(av[1]);
+  else
+    zombie = newZombie("Gabriel");
   zombie->announce();
   delete zombie;
   randomChump("Foo");
