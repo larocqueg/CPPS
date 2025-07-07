@@ -14,13 +14,9 @@
 
 int main(int ac, char **av)
 {
-  Zombie  *zombie;
   if (ac > 1)
-    zombie = newZombie(av[1]);
+    randomChump(av[1]);
   else
-    zombie = newZombie("Gabriel");
-  zombie->announce();
-  delete zombie;
-  randomChump("Foo");
+    randomChump("Foo");
   return (0);
 }
