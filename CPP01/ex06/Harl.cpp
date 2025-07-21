@@ -67,19 +67,22 @@ void  Harl::complain(std::string level)
     index = 2;
   else if (level == "ERROR")
     index = 3;
-  else {
-    std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-    return ;
-  }
 
   switch(index) {
     case 0:
       (this->*functions[0])();
+      /* fall through */
     case 1:
       (this->*functions[1])();
+      /* fall through */
     case 2:
       (this->*functions[2])();
+      /* fall through */
     case 3:
       (this->*functions[3])();
+      break;
+    default:
+      std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+      break;
   }
 }
