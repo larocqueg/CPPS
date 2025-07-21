@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = harlFilter
+NAME = Canonical
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
