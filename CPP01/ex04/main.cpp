@@ -23,6 +23,7 @@ int main(int ac, char **av)
   std::string s2;
   std::ifstream infile;
   std::ofstream outfile;
+  size_t        pos;
   
   if (ac == 4) {
     file1_name = av[1];
@@ -36,14 +37,24 @@ int main(int ac, char **av)
       std::cout << "Error while opening file " << file1_name << std::endl;
       return (1);
     }
-    while (std::getline(infile, text)) {
-      size_t pos = 0;
-      while ((pos = text.find(s1, pos)) != std::string::npos) {
-        text.erase(pos, s1.length());
-        text.insert(pos, s2);
-        pos += s2.length();
+    if (s1 == s2) {
+      while (std::getline(infile, text)) {
+        outfile << text << std::endl;
+        text.clear();
       }
-      outfile << text << std::endl;
+      return (0);
+    }
+    else {
+      while (std::getline(infile, text)) {
+        pos = 0;
+        while ((pos = text.find(s1, pos)) != std::string::npos) {
+          text.erase(pos, s1.length());
+          text.insert(pos, s2);
+          pos += s2.length();
+        }
+        outfile << text << std::endl;
+        text.clear();
+      }
     }
     infile.close();
     outfile.close();
