@@ -14,15 +14,18 @@
 
 ClapTrap::ClapTrap()
 {
-  this->name = "Unknown";
+  this->_name = "Unknown";
   this->_hp = 10;
-  this->ep = 10;
-  this->atk = 0;
+  this->_ep = 10;
+  this->_atk = 0;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& original)
+ClapTrap::ClapTrap(std::string name)
 {
-
+  this->_name = name;
+  this->_hp = 10;
+  this->_ep = 10;
+  this->_atk = 0;
 }
 
 ClapTrap::ClapTrap& operator = (const ClapTrap original)
