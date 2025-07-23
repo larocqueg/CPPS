@@ -37,3 +37,18 @@ ClapTrap::~ClapTrap()
 {
 
 }
+
+void  ClapTrap::attack(std::string& target)
+{
+
+}
+
+void  ClapTrap::takeDamege(unsigned int amount)
+{
+
+}
+
+void  ClapTrap::beRepaired(unsigned int amount)
+{
+
+}
