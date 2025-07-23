@@ -25,6 +25,11 @@ ClapTrap::ClapTrap(const ClapTrap& original)
 
 }
 
+ClapTrap::ClapTrap& operator = (const ClapTrap original)
+{
+
+}
+
 ClapTrap::~ClapTrap()
 {
 
