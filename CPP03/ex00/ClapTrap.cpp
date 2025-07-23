@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap()
 {
-  this->name = NULL;
+  this->name = "Unknown";
   this->_hp = 10;
   this->ep = 10;
   this->atk = 0;
