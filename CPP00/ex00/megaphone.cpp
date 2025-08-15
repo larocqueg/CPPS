@@ -25,6 +25,10 @@ int	main(int ac, char **av)
 				(*av)++;
 			}
 			av++;
+      if (*av)
+        std::cout << " ";
+      else
+        break ;
 		}
 		std::cout << std::endl;
 		return (0);
