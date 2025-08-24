@@ -21,7 +21,7 @@ int	main(int ac, char **av)
 	(void)av;
 	if (ac > 1)
 	{
-    std::cout << "Error: Execute only with ./phonebook";
+    std::cout << "Error: Execute only with ./phonebook" << std::endl;
     return (1);
 	}
   std::cout << "Welcome to phonebook! Use one of the following commands;\n" << std::endl;
@@ -34,7 +34,7 @@ int	main(int ac, char **av)
 void  sig_hand(int signum)
 {
   (void)signum;
-  std::cout << std::endl;
+  exit(130);
 }
 
 Contact new_contact()
@@ -47,7 +47,7 @@ Contact new_contact()
     std::cout << "Enter contact first name: ";
     if (!std::getline(std::cin, input))
     {
-      std::cout << "\nExiting program!" << std::endl;
+      std::cout << "\nExiting phonebook, have a good one!" << std::endl;
       exit(1);
     }
     std::cout << std::endl;
@@ -59,7 +59,7 @@ Contact new_contact()
     std::cout << "Enter contact last name: ";
     if (!std::getline(std::cin, input))
     {
-      std::cout << "\nExiting program!" << std::endl;
+      std::cout << "\nExiting phonebook, have a good one!" << std::endl;
       exit(1);
     }
     std::cout << std::endl;
@@ -71,7 +71,7 @@ Contact new_contact()
     std::cout << "Enter contact nickname: ";
     if (!std::getline(std::cin, input))
     {
-      std::cout << "\nExiting program!" << std::endl;
+      std::cout << "\nExiting phonebook, have a good one!" << std::endl;
       exit(1);
     }
     std::cout << std::endl;
@@ -83,7 +83,7 @@ Contact new_contact()
     std::cout << "Enter contact number: ";
     if (!std::getline(std::cin, input))
     {
-      std::cout << "\nExiting program!" << std::endl;
+      std::cout << "\nExiting phonebook, have a good one!" << std::endl;
       exit(1);
     }
     std::cout << std::endl;
@@ -95,7 +95,7 @@ Contact new_contact()
     std::cout << "Enter contact darkest secret: ";
     if (!std::getline(std::cin, input))
     {
-      std::cout << "\nExiting program!" << std::endl;
+      std::cout << "\nExiting phonebook, have a good one!" << std::endl;
       exit(1);
     }
     std::cout << std::endl;
@@ -113,14 +113,15 @@ void  program_loop()
 
   while (1)
   {
+    std::cout << "You current have " << phonebook.get_size()  << " contacts." << std::endl;
     std::cout << "ADD: adds a contact to the phonebook." << std::endl;
     std::cout << "SEARCH: Display all contacts and asks the user to select one" << std::endl;
     std::cout << "EXIT: If you want to exit the program.\n" << std::endl;
     std::cout << "$> ";
     if (!std::getline(std::cin, input))
     {
-      std::cout << "Exiting program!" << std::endl;
-      exit(1);
+      std::cout << "Exiting phonebook, have a good one!" << std::endl;
+      exit(0);
     }
     if (input == "ADD")
     {
