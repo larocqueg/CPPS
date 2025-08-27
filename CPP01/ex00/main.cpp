@@ -15,7 +15,10 @@
 int main(int ac, char **av)
 {
   if (ac > 1)
-    randomChump(av[1]);
+  {
+    for (int i = 1; i != ac; i++)
+      randomChump(av[i]);
+  }
   else
     randomChump("Foo");
   return (0);

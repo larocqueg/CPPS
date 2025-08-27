@@ -16,6 +16,10 @@
 #include <iostream>
 #include <string>
 
+#define RED   "\033[31;1m"
+#define GRN   "\033[32;1m"
+#define RESET "\033[0m"
+
 class Zombie
 {
   private:
