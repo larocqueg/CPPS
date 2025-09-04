@@ -23,10 +23,10 @@ class ClapTrap
     int         _hp;
     int         _ep;
     int         _atk;
+  public:
     ClapTrap();
     ClapTrap(const ClapTrap& original);
     ClapTrap& operator = (const ClapTrap& original);
-  public:
     ClapTrap(const std::string& target);
     ~ClapTrap();
     void  attack(const std::string& target);
