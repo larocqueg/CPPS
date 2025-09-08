@@ -10,23 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
-    ClapTrap  b;
+    ScavTrap  a("Gabriel");
     
-    b.setName("Gabriel");
-    b.setAtk(20);
-    b.setHp(100);
-    b.setEp(10);
-    std::cout << "Name = " << b.getName() << std::endl;
-    std::cout << "Attack = " << b.getAtk() << std::endl;
-    std::cout << "Hit points = " << b.getHp() << std::endl;
-    std::cout << "Energy points = " << b.getEp() << std::endl;
-    for (int i = 0; i < 11; i++)
-      b.attack("Dutch");
-    b.beRepaired(1);
+
+    for (int i = 0; i < 51; i++)
+      a.attack("Dutch");
+    a.beRepaired(1);
 
     return (0);
 }

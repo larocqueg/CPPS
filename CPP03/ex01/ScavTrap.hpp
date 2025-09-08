@@ -19,12 +19,12 @@ class ScavTrap : public ClapTrap
 {
   public:
     ScavTrap();
-    ScavTrap(std::string name);
+    ScavTrap(std::string const& name);
     ScavTrap(const ScavTrap& original);
     ScavTrap& operator = (const ScavTrap& original);
     ~ScavTrap();
     void  attack(std::string target);
-    //void  guardGate();
+    void  guardGate();
 };
 
 #endif
