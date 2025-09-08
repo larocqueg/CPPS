@@ -15,9 +15,9 @@
 int main(void)
 {
     ClapTrap a("Gabriel");
-    ClapTrap b("Micah");
+    /*ClapTrap b("Micah");
 
-    /*a.getAttack(1);
+    a.getAttack(1);
     a.getEp(10);
     a.getHp(10);
     b.getHp(10);
