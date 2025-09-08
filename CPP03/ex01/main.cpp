@@ -12,14 +12,27 @@
 
 #include "ScavTrap.hpp"
 
+void  displayStatus(ScavTrap *a);
+
 int main(void)
 {
     ScavTrap  a("Gabriel");
-    
+  
+    displayStatus(&a);
 
-    for (int i = 0; i < 51; i++)
+    for (int i = 0; i < 10; i++)
       a.attack("Dutch");
-    a.beRepaired(1);
+  
+    displayStatus(&a);
 
+    a.takeDamage(a.getHp());
+    
+    displayStatus(&a);
     return (0);
+}
+
+void  displayStatus(ScavTrap *a)
+{
+    std::cout << "ScavTrap " << a->getName() << " status: " << "\nHP: " << a->getHp()
+    << "\nEP: " << a->getEp() << std::endl;
 }

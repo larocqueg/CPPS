@@ -17,11 +17,11 @@ ScavTrap::ScavTrap(void) : ClapTrap("Unknown")
   std::cout << YELLOW << "ScavTrap default constructor called!"
     << RESET << std::endl;
   
-  this->setAtk(20);
-  this->setEp(50);
-  this->setHp(100);
+  this->_atk = 20;
+  this->_ep = 50;
+  this->_hp = 100;
 
-  std::cout << GREEN << "ScavTrap " << this->getName() << " was created!"
+  std::cout << GREEN << "ScavTrap " << this->_name << " was created!"
     << RESET << std::endl;
 }
 
@@ -30,11 +30,11 @@ ScavTrap::ScavTrap(std::string const& name) : ClapTrap(name)
   std::cout << YELLOW << "ScavTrap parametized constructor called!"
     << RESET << std::endl;
   
-  this->setAtk(20);
-  this->setEp(50);
-  this->setHp(100);
+  this->_atk = 20;
+  this->_ep = 50;
+  this->_hp = 100;
 
-  std::cout << GREEN << "ScavTrap " << this->getName() << " was created!"
+  std::cout << GREEN << "ScavTrap " << this->_name << " was created!"
   << RESET << std::endl;
 }
 
@@ -59,25 +59,45 @@ ScavTrap::~ScavTrap()
 {
   std::cout << YELLOW << "Scavtrap destructor called!" << RESET << std::endl;
   
-  std::cout << RED << "ScavTrap " << this->getName() << " was destroyed!"
+  std::cout << RED << "ScavTrap " << this->_name << " was destroyed!"
   << RESET << std::endl;
 }
 
 void ScavTrap::attack(std::string name)
 {
-  if (this->getEp() <= 0 || this->getHp() <= 0)
-    std::cout  << RED << "ScavTrap " << this->getName() << " couldn't attack, "
+  if (this->_ep <= 0 || this->_hp <= 0)
+    std::cout  << RED << "ScavTrap " << this->_name << " couldn't attack, "
     << "not enough energy or hit points!" << RESET << std::endl;
   else
   {
-    std::cout << CYAN << "ScavTrap " << this->getName() << " attacked "
-    << name << " causing " << this->getAtk() << " damage!" << RESET << std::endl;
-    this->setEp(getEp() - 1);
+    std::cout << CYAN << "ScavTrap " << this->_name << " attacked "
+    << name << " causing " << this->_atk << " damage!" << RESET << std::endl;
+    this->_ep -= 1;
   }
 }
 
 void  ScavTrap::guardGate()
 {
-  std::cout << CYAN << "ScavTraprap " << this->getName() << " is now guarding the gate!"
+  std::cout << CYAN << "ScavTraprap " << this->_name << " is now guarding the gate!"
   << RESET << std::endl;
+}
+
+std::string ScavTrap::getName()
+{
+  return (this->_name);
+}
+
+unsigned int  ScavTrap::getHp()
+{
+  return (this->_hp);
+}
+
+unsigned int  ScavTrap::getEp()
+{
+  return (this->_ep);
+}
+
+unsigned int  ScavTrap::getAtk()
+{
+  return (this->_atk);
 }

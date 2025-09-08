@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCRAVTRAP_HPP
-# define SCRAVTRAP_HPP
+#pragmaonce
 
 #include "ClapTrap.hpp"
 
@@ -25,6 +24,10 @@ class ScavTrap : public ClapTrap
     ~ScavTrap();
     void  attack(std::string target);
     void  guardGate();
+    std::string   getName();
+    unsigned int  getHp(); 
+    unsigned int  getEp();
+    unsigned int  getAtk();
 };
 
 #endif

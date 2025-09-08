@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#pragmaonce //same as ifndef define
 
 #include <string>
 #include <iostream>
@@ -26,9 +25,9 @@ class ClapTrap
 {
   private:
     std::string _name;
-    int         _hp;
-    int         _ep;
-    int         _atk;
+    unsigned int         _hp;
+    unsigned int         _ep;
+    unsigned int         _atk;
   public:
     ClapTrap();
     ClapTrap(const ClapTrap& original);

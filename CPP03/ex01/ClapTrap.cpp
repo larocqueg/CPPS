@@ -48,7 +48,7 @@ ClapTrap::~ClapTrap()
 
 void ClapTrap::attack(const std::string& target)
 {
-    if (this->_ep <= 0 || this->_hp <= 0)
+    if (this->_ep == 0 || this->_hp == 0)
     {
         std::cout << RED <<"ClapTrap " << this->_name
                   << " couldn't attack, not enough energy or hit points!"
@@ -64,7 +64,7 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    if (this->_hp <= static_cast<int>(amount))
+    if (this->_hp <= amount)
     {
         std::cout << YELLOW << "ClapTrap " << this->_name
                   << " received a strong attack and lost all hit points!"
@@ -85,7 +85,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    if (this->_ep <= 0 || this->_hp <= 0)
+    if (this->_ep == 0 || this->_hp == 0)
     {
         std::cout << RED << "ClapTrap " << this->_name
                   << " couldn't be repaired, not enough energy or hit points!"
@@ -98,44 +98,4 @@ void ClapTrap::beRepaired(unsigned int amount)
         this->_hp += amount;
         this->_ep--;
     }
-}
-
-int ClapTrap::getAtk() const
-{
-  return (this->_atk);
-}
-
-void  ClapTrap::setAtk(unsigned int amount)
-{
-  this->_atk = amount;
-}
-
-std::string ClapTrap::getName() const
-{
-  return (this->_name);
-}
-
-void  ClapTrap::setName(std::string name)
-{
-  this->_name = name;
-}
-
-int ClapTrap::getHp() const
-{
-  return (this->_hp);
-}
-
-void  ClapTrap::setHp(unsigned int amount)
-{
-  this->_hp = amount;
-}
-
-int ClapTrap::getEp() const
-{
-  return (this->_ep);
-}
-
-void  ClapTrap::setEp(unsigned int amount)
-{
-  this->_ep = amount;
 }
