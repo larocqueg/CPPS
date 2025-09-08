@@ -42,5 +42,3 @@ class ClapTrap
     void  getHp(unsigned int amount);
     void  getEp(unsigned int amount);*/
 };
-
-#endif

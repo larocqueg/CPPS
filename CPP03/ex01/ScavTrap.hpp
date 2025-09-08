@@ -29,5 +29,3 @@ class ScavTrap : public ClapTrap
     unsigned int  getEp();
     unsigned int  getAtk();
 };
-
-#endif

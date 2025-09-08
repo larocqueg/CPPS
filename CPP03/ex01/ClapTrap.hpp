@@ -41,5 +41,3 @@ class ClapTrap
     // Getters
 
 };
-
-#endif
