@@ -14,5 +14,22 @@
 
 int main(void)
 {
+    ClapTrap a("Gabriel");
+    ClapTrap b("Micah");
 
+    /*a.getAttack(1);
+    a.getEp(10);
+    a.getHp(10);
+    b.getHp(10);
+    
+    for (int i = 0; i < 10; i++)
+      a.doDamage(b);
+    for (int i = 0; i < 10; i++)
+      a.beRepaired(1);*/
+
+    for (int i = 0; i < 11; i++)
+      a.attack("Dutch");
+    a.beRepaired(1);
+
+    return (0);
 }

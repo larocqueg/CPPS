@@ -10,11 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTAP_HPP
+#ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 
 #include <string>
-#include <iostrem>
+#include <iostream>
+
+#define RED     "\033[31m"
+#define YELLOW  "\033[33m"
+#define GREEN   "\033[32m"
+#define CYAN    "\033[36m"
+#define RESET   "\033[0m"
 
 class ClapTrap
 {
@@ -29,6 +35,13 @@ class ClapTrap
     ClapTrap& operator = (const ClapTrap& original);
     ClapTrap(const std::string& target);
     ~ClapTrap();
+    void  attack(const std::string& target);
+    void  takeDamage(unsigned int amount);
+    void  beRepaired(unsigned int amount);
+    /*void  doDamage(ClapTrap& other);
+    void  getAttack(unsigned int amount);
+    void  getHp(unsigned int amount);
+    void  getEp(unsigned int amount);*/
 };
 
 #endif
