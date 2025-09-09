@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragmaonce //same as ifndef define
+#pragma once //same as ifndef define
 
 #include <string>
 #include <iostream>

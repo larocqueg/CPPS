@@ -16,10 +16,7 @@
 
 ClapTrap::ClapTrap() : _hp(10), _ep(10), _atk(0)
 {
-    this->_name = "Default";
-
-    std::cout << GREEN << "ClapTrap " << this->_name  << " was created!"
-    << RESET << std::endl;
+    std::cout << GREEN << "ClapTrap was created" << RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string& name) : _name(name), _hp(10), _ep(10), _atk(0)

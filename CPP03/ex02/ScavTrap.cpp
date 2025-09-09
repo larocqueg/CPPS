@@ -12,7 +12,7 @@
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void)
+ScavTrap::ScavTrap(void) : ClapTrap("Unknown")
 {
   std::cout << YELLOW << "ScavTrap default constructor called!"
     << RESET << std::endl;
@@ -25,12 +25,11 @@ ScavTrap::ScavTrap(void)
     << RESET << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string const& name)
+ScavTrap::ScavTrap(std::string const& name) : ClapTrap(name)
 {
   std::cout << YELLOW << "ScavTrap parametized constructor called!"
     << RESET << std::endl;
   
-  this->_name = name;
   this->_atk = 20;
   this->_ep = 50;
   this->_hp = 100;
@@ -39,12 +38,10 @@ ScavTrap::ScavTrap(std::string const& name)
   << RESET << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& original)
+ScavTrap::ScavTrap(const ScavTrap& original) : ClapTrap(original)
 {
   std::cout << YELLOW << "Scavtrap copy constructor called!"
   << RESET << std::endl;
-
-  *this = original;
 }
 
 ScavTrap& ScavTrap :: operator = (const ScavTrap& original)
