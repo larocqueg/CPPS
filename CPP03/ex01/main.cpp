@@ -17,6 +17,7 @@ void  displayStatus(ScavTrap *a);
 int main(void)
 {
     ScavTrap  a("Gabriel");
+    ScavTrap  b("Robot");
   
     displayStatus(&a);
 
@@ -28,6 +29,9 @@ int main(void)
     a.takeDamage(a.getHp());
     
     displayStatus(&a);
+    
+    for(int i = 0; i < 51; i++)
+      b.attack("Gannon");
     return (0);
 }
 

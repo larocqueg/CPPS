@@ -14,23 +14,37 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _hp(10), _ep(10), _atk(0)
+ClapTrap::ClapTrap() : _name("Default"), _hp(10), _ep(10), _atk(0)
 {
-    std::cout << GREEN << "ClapTrap was created" << RESET << std::endl;
+    std::cout << YELLOW << "ClapTrap default contructor called!"
+    << RESET << std::endl;
+
+    std::cout << GREEN << "ClapTrap " << this->_name << " was created!"
+    << RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string& name) : _name(name), _hp(10), _ep(10), _atk(0)
 {
-    std::cout << "ClapTrap " << this->_name << " was created!" << std::endl;
+    std::cout << YELLOW << "ClapTrap parameterized contructor called!"
+    << RESET << std::endl;
+    
+    std::cout << GREEN << "ClapTrap " << this->_name << " was created!"
+    << RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& original)
 {
+    std::cout << YELLOW << "ClapTrap copy constructor called!"
+    << RESET << std::endl;
+
     *this = original;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& original)
 {
+    std::cout << YELLOW << "ClapTrap copy assigment operator called!"
+    << RESET << std::endl;
+    
     if (this != &original)
     {
         this->_name = original._name;
@@ -38,12 +52,15 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& original)
         this->_ep   = original._ep;
         this->_atk  = original._atk;
     }
-    return *this;
+    return (*this);
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << RED << "ClapTrap " << this->_name << " was destroyed!" << RESET << std::endl;
+    std::cout << YELLOW << "ClapTrap default destructor called!" << RESET << std::endl;
+    
+    std::cout << RED << "ClapTrap " << this->_name << " was destroyed!"
+    << RESET << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)

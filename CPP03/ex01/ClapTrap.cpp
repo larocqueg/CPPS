@@ -14,10 +14,8 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _hp(10), _ep(10), _atk(0)
+ClapTrap::ClapTrap() : _name("Default"), _hp(10), _ep(10), _atk(0)
 {
-    this->_name = "Default";
-
     std::cout << GREEN << "ClapTrap " << this->_name  << " was created!"
     << RESET << std::endl;
 }
@@ -83,7 +81,8 @@ void ClapTrap::takeDamage(unsigned int amount)
     }
 
     if (this->_hp <= 0)
-        std::cout << YELLOW << "ClapTrap " << this->_name << " is out of hit points!" << RESET << std::endl;
+        std::cout << YELLOW << "ClapTrap " << this->_name << " is out of hit points!"
+        << RESET << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)

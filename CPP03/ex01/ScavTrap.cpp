@@ -27,7 +27,7 @@ ScavTrap::ScavTrap(void)
 
 ScavTrap::ScavTrap(std::string const& name)
 {
-  std::cout << YELLOW << "ScavTrap parametized constructor called!"
+  std::cout << YELLOW << "ScavTrap parameterized constructor called!"
     << RESET << std::endl;
   
   this->_name = name;
