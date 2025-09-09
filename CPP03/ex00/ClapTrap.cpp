@@ -87,6 +87,8 @@ void ClapTrap::takeDamage(unsigned int amount)
                   << " received a strong attack and lost all hit points!"
                   <<  RESET << std::endl;
         this->_hp = 0;
+        std::cout << "ClapTrap " << this->_name << " is out of hit points!"
+        << std::endl;
     }
     else
     {
@@ -94,6 +96,7 @@ void ClapTrap::takeDamage(unsigned int amount)
                   << " received " << amount << " points of damage!"
                   << RESET << std::endl;
         this->_hp -= amount;
+        std::cout << "Now it has " << this->_hp << " hit points left!" << std::endl;
     }
 
     if (this->_hp <= 0)

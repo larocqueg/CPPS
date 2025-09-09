@@ -14,9 +14,10 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _hp(10), _ep(10), _atk(0)
+ClapTrap::ClapTrap() : _name("Default"), _hp(10), _ep(10), _atk(0)
 {
-    std::cout << GREEN << "ClapTrap was created" << RESET << std::endl;
+    std::cout << GREEN << "ClapTrap " << this->_name  << " was created!"
+    << RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string& name) : _name(name), _hp(10), _ep(10), _atk(0)
@@ -77,10 +78,13 @@ void ClapTrap::takeDamage(unsigned int amount)
                   << " received " << amount << " points of damage!"
                   << RESET << std::endl;
         this->_hp -= amount;
+        std::cout << "Now it has " << this->_hp << " hit points left!"
+        << std::endl;
     }
 
     if (this->_hp <= 0)
-        std::cout << YELLOW << "ClapTrap " << this->_name << " is out of hit points!" << RESET << std::endl;
+        std::cout << YELLOW << "ClapTrap " << this->_name << " is out of hit points!"
+        << RESET << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)

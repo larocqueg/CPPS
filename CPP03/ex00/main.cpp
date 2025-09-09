@@ -17,7 +17,6 @@ int main(void)
     ClapTrap a("Gabriel");
     ClapTrap b;
    
-    b = a;
     /*ClapTrap b("Micah");
 
     a.getAttack(1);
@@ -32,7 +31,14 @@ int main(void)
 
     for (int i = 0; i < 11; i++)
       a.attack("Dutch");
+    a.takeDamage(10);
     a.beRepaired(1);
+    
+    b = a;
+    for (int i = 0; i < 11; i++)
+      b.attack("Dutch");
+    b.takeDamage(10);
+    b.beRepaired(1);
 
     return (0);
 }

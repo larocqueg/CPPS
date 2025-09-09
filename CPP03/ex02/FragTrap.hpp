@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-la-r <gde-la-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/28 16:45:58 by gde-la-r          #+#    #+#             */
-/*   Updated: 2025/07/28 16:46:14 by gde-la-r         ###   ########.fr       */
+/*   Created: 2025/09/09 14:48:08 by gde-la-r          #+#    #+#             */
+/*   Updated: 2025/09/09 14:48:18 by gde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#pragma once
 
-int main(void)
+#include "ClapTrap.hpp"
+
+class FragTrap : public ClapTrap
 {
-    FragTrap  a("Frag");
-  
-    for(int i = 0; i < 51; i++)
-      a.attack("Monster");
-    a.takeDamage(10);
-    a.takeDamage(10);
-    a.takeDamage(10);
-    a.highFiveGuys();
-    return (0);
-}
+    public:
+      FragTrap();
+      FragTrap(std::string const &name);
+      FragTrap(const FragTrap& original);
+      FragTrap& operator = (const FragTrap& original);
+      ~FragTrap();
+
+      void  highFiveGuys(void);
+};
