@@ -10,8 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
 #include <string>
 #include <iostream>
+
+#define RED     "\033[31m"
+#define YELLOW  "\033[33m"
+#define GREEN   "\033[32m"
+#define CYAN    "\033[36m"
+#define RESET   "\033[0m"
 
 class Animal
 {
@@ -19,9 +27,8 @@ class Animal
     std::string _type;
   public:
     Animal();
-    Animal(const std::string& type);
     Animal(const Animal& origianl);
     Animal& operator = (const Animal& original);
     ~Animal();
-    void  makeSound();
-}
+    virtual void  makeSound() const;
+};

@@ -1,48 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-la-r <gde-la-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/10 16:22:05 by gde-la-r          #+#    #+#             */
-/*   Updated: 2025/09/10 16:22:30 by gde-la-r         ###   ########.fr       */
+/*   Created: 2025/09/11 18:47:33 by gde-la-r          #+#    #+#             */
+/*   Updated: 2025/09/11 18:51:32 by gde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Cat.hpp"
 
-Animal::Animal() : _type("Default")
+Cat::Cat()
 {
-  std::cout << GREEN << "Animal default constructor called!"
+  std::cout << YELLOW << "Cat default constructor called!"
   << RESET << std::endl;
+  this->_type = "cat";
 }
 
-Animal::Animal(const Animal& original)
+Cat::Cat(const Cat& original)
 {
-  std::cout << GREEN << "Animal copy contructor called!"
+  std::cout << YELLOW "Cat copy constructor called!"
   << RESET << std::endl;
   *this = original;
 }
 
-Animal& Animal::operator=(const Animal& original)
+Cat& Cat::operator = (const Cat& original)
 {
-  std::cout << GREEN << "Animal copy assingment operator called!"
+  std::cout << YELLOW "Cat copy assignment operator called!"
   << RESET << std::endl;
 
-  if (this != &original)
+  if (this != & original)
     this->_type = original._type;
   return (*this);
 }
 
-Animal::~Animal()
+Cat::~Cat()
 {
-  std::cout << RED << "Animal default destructor called!"
+  std::cout << RED << "Cat default destructor called!"
   << RESET << std::endl;
 }
 
-void  Animal::makeSound() const
+void Cat::makeSound() const
 {
-  std::cout << CYAN <<"Program registered an unrecognized animal sound!"
+  std::cout << CYAN << "Program registered a Cat sound!"
   << RESET << std::endl;
 }

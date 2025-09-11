@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-la-r <gde-la-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/11 18:53:10 by gde-la-r          #+#    #+#             */
-/*   Updated: 2025/09/11 18:54:22 by gde-la-r         ###   ########.fr       */
+/*   Created: 2025/09/11 18:46:32 by gde-la-r          #+#    #+#             */
+/*   Updated: 2025/09/11 18:47:25 by gde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
+#pragma once
 
-int main()
+#include "Animal.hpp"
+
+class Dog : virtual public Animal
 {
-  Animal  Animal;
-  Dog dog;
-  Cat cat;
+  private:
+    Dog& operator = (const Dog& original);
+    Dog(const Dog & original);
 
-  Animal.makeSound();
-  dog.makeSound();
-  cat.makeSound();
-  return (0);
-}
+  public:
+    Dog();
+    void makeSound() const;
+    ~Dog();
+};
