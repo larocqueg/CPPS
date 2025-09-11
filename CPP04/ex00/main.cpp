@@ -21,13 +21,15 @@ int main()
 
   std::cout << j->getType() << " " << std::endl;
   std::cout << i->getType() << " " << std::endl;
-  i->makeSound(); //will output the cat sound!
+  i->makeSound();
   j->makeSound();
   meta->makeSound();
 
   WrongAnimal* wrong = new WrongAnimal();
+  WrongCat* notcat = new WrongCat();
 
   std::cout << << wrong.getType() << " " << std::endl;
+  std::cout << << notcat.getType() << " " << std::endl;
   wrong.makeSound();
   return (0);
 }
