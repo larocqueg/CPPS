@@ -10,5 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
 #include <iostream>
 #include <string>
+
+class Brain
+{
+  private:
+    std::string idead[100];
+  public:
+    Brain();
+    Brain(const Brain& original);
+    Brain& operator = (const Brain& original);
+    ~Brain();
+}
