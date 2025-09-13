@@ -12,8 +12,8 @@
 
 #pragma once
 
-#include "string"
-#include "iostream"
+#include <string>
+#include <iostream>
 
 #define RED     "\033[31m"
 #define YELLOW  "\033[33m"
