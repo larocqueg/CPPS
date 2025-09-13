@@ -22,7 +22,7 @@ WrongAnimal:: WrongAnimal()
 
 WrongAnimal::WrongAnimal(const WrongAnimal& original)
 {
-  this->_type = original._type;
+  *this = original;
 }
 
 WrongAnimal& WrongAnimal::operator = (const WrongAnimal& original)

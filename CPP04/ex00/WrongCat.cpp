@@ -22,7 +22,7 @@ WrongCat::WrongCat()
 
 WrongCat::WrongCat(const WrongCat& original)
 {
-  this->_type = original._type;
+  *this = original;
 }
 
 WrongCat& WrongCat::operator = (const WrongCat& original)
