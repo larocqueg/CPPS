@@ -12,38 +12,56 @@
 
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "Brain.hpp"
 #include "WrongCat.hpp"
 #include "WrongAnimal.hpp"
 
 int main()
 {
-    Animal* animal = new Animal();
-    Animal* dog = new Dog();
-    Animal* cat = new Cat();
+  Animal  *animal[10];
 
-    std::cout << animal->getType() << " " << std::endl;
-    std::cout << dog->getType() << " " << std::endl;
-    std::cout << cat->getType() << " " << std::endl;
+  for (int i = 0; i < 10; i++)
+  {
+    if (i < 5)
+      animal[i] = new Dog();
+    else
+      animal[i] = new Cat();
+  }
 
-    animal->makeSound();
-    dog->makeSound();
-    cat->makeSound();
+  for (int i = 0; i < 10; i++)
+    animal[i]->makeSound();
+  
+  for (int i = 0; i < 10; i++)
+    delete animal[i];
 
-    delete dog;
-    delete cat;
-    delete animal;
+  Dog *dog = new Dog();
+  Dog *dog2 = new Dog();
+  *dog2 = *dog;
 
-    WrongAnimal* wrong = new WrongAnimal();
-    WrongAnimal* wrongcat = new WrongCat();
+  for (int i = 0; i < 20; i++)
+  {
+    dog->setIdea("Bite bones", i);
+    std::cout << dog->getIdea(i) << std::endl;
+  }
+  for (int i = 20; i < 100; i++)
+    std::cout << dog->getIdea(i) << std::endl;
+ 
+  Cat *cat = new Cat();
+  Cat *cat2 = new Cat();
+  *cat2 = *cat;
 
-    std::cout << wrong->getType() << " " << std::endl;
-    std::cout << wrongcat->getType() << " " << std::endl;
+  for (int i = 0; i < 20; i++)
+  {
+    cat->setIdea("Scratch humans", i);
+    std::cout << cat->getIdea(i) << std::endl;
+  }
+  for (int i = 20; i < 100; i++)
+    std::cout << cat->getIdea(i) << std::endl;
 
-    wrong->makeSound();
-    wrongcat->makeSound();
+  delete dog2;
+  delete dog;
+  delete cat2;
+  delete cat;
 
-    delete wrongcat;
-    delete wrong;
-
-    return (0);
+  return (0);
 }

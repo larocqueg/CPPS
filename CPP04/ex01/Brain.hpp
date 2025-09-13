@@ -12,16 +12,19 @@
 
 #pragma once
 
+#include "Animal.hpp"
 #include <iostream>
 #include <string>
 
 class Brain
 {
-  private:
-    std::string idead[100];
+  protected:
+    std::string _ideas[100];
   public:
     Brain();
     Brain(const Brain& original);
     Brain& operator = (const Brain& original);
     ~Brain();
-}
+    std::string getIdea(unsigned int pos) const;
+    void  setIdea(const std::string& idea, unsigned int pos);
+};

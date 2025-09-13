@@ -12,38 +12,18 @@
 
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "Brain.hpp"
 #include "WrongCat.hpp"
 #include "WrongAnimal.hpp"
 
 int main()
 {
-    Animal* animal = new Animal();
-    Animal* dog = new Dog();
-    Animal* cat = new Cat();
+  Cat  *cat = new Cat();
+  Dog  *dog = new Dog();
 
-    std::cout << animal->getType() << " " << std::endl;
-    std::cout << dog->getType() << " " << std::endl;
-    std::cout << cat->getType() << " " << std::endl;
 
-    animal->makeSound();
-    dog->makeSound();
-    cat->makeSound();
-
-    delete dog;
-    delete cat;
-    delete animal;
-
-    WrongAnimal* wrong = new WrongAnimal();
-    WrongAnimal* wrongcat = new WrongCat();
-
-    std::cout << wrong->getType() << " " << std::endl;
-    std::cout << wrongcat->getType() << " " << std::endl;
-
-    wrong->makeSound();
-    wrongcat->makeSound();
-
-    delete wrongcat;
-    delete wrong;
-
-    return (0);
+  std::cout << CYAN << cat->getIdea() << std::endl;
+  std::cout << dog->getIdea() << RESET << std::endl;
+ 
+  return (0);
 }

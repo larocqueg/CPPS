@@ -12,6 +12,7 @@
 
 #pragma once
 
+#include "Brain.hpp"
 #include <string>
 #include <iostream>
 

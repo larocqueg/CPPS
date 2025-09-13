@@ -13,15 +13,18 @@
 #pragma once
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
-class Dog : virtual public Animal
+class Dog : public Animal
 {
   private:
-    Dog& operator = (const Dog& original);
-    Dog(const Dog & original);
-
+    Brain *_brain;
   public:
     Dog();
-    void makeSound() const;
+    Dog(const Dog & original);
+    Dog& operator = (const Dog& original);
     ~Dog();
+    void makeSound() const;
+    std::string getIdea(unsigned int pos) const;
+    void  setIdea(const std::string& idea, unsigned int pos);
 };
