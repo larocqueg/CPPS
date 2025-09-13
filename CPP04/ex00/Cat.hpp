@@ -16,12 +16,10 @@
 
 class Cat : virtual public Animal
 {
-  private:
-    Cat& operator = (const Cat& original);
-    Cat(const Cat & original);
-
   public:
     Cat();
-    void makeSound() const;
+    Cat(const Cat& original);
+    Cat& operator = (const Cat& original);
     ~Cat();
+    void makeSound() const;
 };

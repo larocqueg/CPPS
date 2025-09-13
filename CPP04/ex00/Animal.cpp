@@ -41,6 +41,11 @@ Animal::~Animal()
   << RESET << std::endl;
 }
 
+std::string Animal::getType() const
+{
+  return (this->_type);
+}
+
 void  Animal::makeSound() const
 {
   std::cout << CYAN <<"Program registered an unrecognized animal sound!"
